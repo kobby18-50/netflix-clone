@@ -1,7 +1,7 @@
 import MovieCard from "@/components/cards/MovieCard";
 import CustomHeader from "@/components/CustomHeader";
-import { APIKEY } from "@/lib/utils";
 import { MOVIES } from "@/models";
+import { APIKEY } from "@/utils";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ const Homepage = () => {
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?s=movie&apikey=${APIKEY}&y=2024`)
+      const response = await axios.get(`https://www.omdbapi.com/?s=movie&apikey=${APIKEY}&y=2024`)
 
       setMovies(response.data.Search)
     } catch (error) {
@@ -23,7 +23,7 @@ const Homepage = () => {
 
   const fetchSeries = async () => {
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?s=series&apikey=${APIKEY}&y=2024`)
+      const response = await axios.get(`https://www.omdbapi.com/?s=series&apikey=${APIKEY}&y=2024`)
 
       setSeries(response.data.Search)
     } catch (error) {
@@ -34,7 +34,7 @@ const Homepage = () => {
 
   const fetchEpisodes = async () => {
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?s=episode&apikey=${APIKEY}`)
+      const response = await axios.get(`https://www.omdbapi.com/?s=episode&apikey=${APIKEY}`)
 
       setEpisodes(response.data.Search)
 
