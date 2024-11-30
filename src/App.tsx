@@ -1,13 +1,16 @@
 import { Route,Routes } from "react-router-dom"
 import HomePage from "./pages/Homepage"
+import Footer from "./components/Footer"
 
 function App() {
 
   return (
-   <div className="mx-10 mt-5">
+   <div className="mt-5">
     <Routes>
       <Route path="/" element={<HomePage/>} />
     </Routes>
+
+    <Footer/>
 
    </div>
   )
